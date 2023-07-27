@@ -1,3 +1,4 @@
-alert ("Hello World!")
-var favoriteFood = "pancakes"
-document.write (favoriteFood)
+alert('Hello world');
+alert ();
+var favoriteFood = 'gelato';
+document.write (favoriteFood);
