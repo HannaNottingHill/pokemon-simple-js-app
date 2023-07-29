@@ -12,7 +12,7 @@ let pokemonList = [
 // New in HTML (loop) Pokemon Name (height: xx) 
 for (i = 0; i < pokemonList.length; i++) {
     const pokemon = pokemonList[i];
-    const pokemonInfo =  `${pokemon.name} (height: ${pokemon.height})`
+    let pokemonInfo =  `${pokemon.name} (height: ${pokemon.height})`
 
 
     if (pokemon.height > 5) {
