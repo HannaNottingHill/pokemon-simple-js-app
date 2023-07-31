@@ -1,3 +1,5 @@
+
+let pokemonRepository = (function () {
 let pokemonList = [
     { name: "Vulpix", height: "2.00 ", type: "Fire" },
     { name: "Pikachu", height: "1.04 ", type: "Electric" },
@@ -7,26 +9,27 @@ let pokemonList = [
     { name: "Seadra", height: "3.11 ", type: "Water" },
     { name: "Charizard", height: "5.07 ", type: ["Fire", "Flying"] },
     { name: "Balbasaur", height: "2.04 ", type: ["Gras", "Poison"] }
-]
-
-// New in HTML (loop) Pokemon Name (height: xx) 
-for (i = 0; i < pokemonList.length; i++) {
-    const pokemon = pokemonList[i];
-    let pokemonInfo =  `${pokemon.name} (height: ${pokemon.height})`
+];
 
 
-    if (pokemon.height > 5) {
-        pokemonInfo+= " -Wow, so tall!!"
-
+    function getAll() {
+        return pokemonList;
     }
 
-    else if (pokemon.height < 3) {
-        pokemonInfo+=" -So cute!!"
+    function add(item) {
+        pokemonList.push(item)
     }
 
-    else {
-        pokemonInfo
-    }
+    return {
+        getAll: getAll,
+        add: add
+    };
 
-    document.write(pokemonInfo);
-}
+})();
+
+
+var allPokemons = pokemonRepository.getAll();
+
+allPokemons.forEach((pokemon) =>
+{document.write(pokemon.name + ' is ' + pokemon.height + 'tall' + '<br>');
+});
