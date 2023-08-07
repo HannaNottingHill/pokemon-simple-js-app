@@ -26,10 +26,21 @@ let pokemonList = [
     };
 
 })();
+// Selecting the unordered list
+var pokemonListElement = document.querySelector ('.pokemon-list');
 
+pokemonRepository.getAll().forEach ((pokemon) => {
+    //listn element
+ let listItem = document.createElement ('li');
+  //button element 
+  let button = document.createElement ('button');
 
-var allPokemons = pokemonRepository.getAll();
+  button.classList.add ('pokemon-button');
+  // adding pokemon name to the button
+  button.innerText = pokemon.name;
 
-allPokemons.forEach((pokemon) =>
-{document.write(pokemon.name + ' is ' + pokemon.height + 'tall' + '<br>');
+  // appened the button to the li item as it's child
+  listItem.appendChild(button);
+ pokemonListElement.appendChild(listItem);
+  
 });
