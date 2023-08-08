@@ -1,5 +1,30 @@
-
+document.addEventListener ("DOMContentLoaded", function() {
 let pokemonRepository = (function () {
+
+    // addListItem function
+    // addListItem
+
+    function addListItem(pokemon) {
+
+        var pokemonListElement = document.querySelector('.pokemon-list');
+        
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+
+        button.classList.add('pokemon-button');
+        button.innerText = pokemon.name;
+ // event listener for the buttons
+        button.addEventListener('click', function () {
+            showDetails(pokemon); // calls the showDetails function
+        });
+
+        listItem.appendChild(button);
+        pokemonListElement.appendChild(listItem);
+    }
+
+  
+//Pokemon List
+
 let pokemonList = [
     { name: "Vulpix", height: "2.00 ", type: "Fire" },
     { name: "Pikachu", height: "1.04 ", type: "Electric" },
@@ -12,35 +37,33 @@ let pokemonList = [
 ];
 
 
-    function getAll() {
-        return pokemonList;
-    }
+function getAll() {
+    return pokemonList;
+}
 
-    function add(item) {
-        pokemonList.push(item)
-    }
+function add(item) {
+    pokemonList.push(item)
+}
 
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
     };
 
+    
+
 })();
-// Selecting the unordered list
-var pokemonListElement = document.querySelector ('.pokemon-list');
+
+
+ //Event listener  for each pokemon
+
+ function showDetails (pokemon) {
+    console.log (pokemon.name);
+   }
 
 pokemonRepository.getAll().forEach ((pokemon) => {
-    //listn element
- let listItem = document.createElement ('li');
-  //button element 
-  let button = document.createElement ('button');
+   pokemonRepository.addListItem(pokemon);
+    });
 
-  button.classList.add ('pokemon-button');
-  // adding pokemon name to the button
-  button.innerText = pokemon.name;
-
-  // appened the button to the li item as it's child
-  listItem.appendChild(button);
- pokemonListElement.appendChild(listItem);
-  
 });

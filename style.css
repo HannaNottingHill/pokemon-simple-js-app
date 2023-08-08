@@ -1,0 +1,41 @@
+.pokemon-button {
+
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: 6px 4px;
+    cursor: pointer;
+    width: 200px;
+    max-width: 100%;
+
+}
+
+.pokemon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+
+ul { 
+    list-style: none;
+}
+
+@media (max-width: 768px) {
+    .pokemon-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (min-width:769px) {
+    .pokemon-button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+}
