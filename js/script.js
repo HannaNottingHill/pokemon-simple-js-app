@@ -56,7 +56,7 @@ function add(item) {
 })();
 
 
- //Event listener  for each pokemon
+ //Event listener  for each pokemon, showDetails
 
  function showDetails (pokemon) {
     console.log (pokemon.name);
