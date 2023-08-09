@@ -58,11 +58,12 @@ function add(item) {
 
  //Event listener  for each pokemon, showDetails
 
- function showDetails (pokemon) {
+
+ //function showDetails (pokemon) {
     console.log (pokemon.name);
    }
 
-pokemonRepository.getAll().forEach ((pokemon) => {
+//pokemonRepository.getAll().forEach ((pokemon) => {
    pokemonRepository.addListItem(pokemon);
     });
 
