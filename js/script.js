@@ -88,12 +88,68 @@ document.addEventListener("DOMContentLoaded", function () {
     })();
 
 
-
+    
 
     function showDetails(pokemon) {
-        console.log(pokemon.name);
-    }
+       
+       //Modal added
+       let modalContainer = document.querySelector('#modal-container');
 
+       // hide modal function
+       function hideModal () {
+        modalContainer.classList.remove('is-visible');
+       }
+       
+       // event listener to close modal when clicking outside
+       window.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target=== modalContainer) {
+            hideModal();
+        }
+       });
+
+       //event listener to open modal when pokemon is clicked
+       document.querySelector('.pokemon-list').addEventListener('click', function (event) {
+        const clickedPokemon = pokemonRepository.getAll().find(pokemon => pokemon.name === event.target.innerText);
+        if (clickedPokemon) {
+
+            showModal(clickedPokemon.name, `Height: ${clickedPokemon.height}`, 
+            clickedPokemon.imageUrl);}
+        });
+    
+
+    // function to show modal
+    function showModal (title, text) {
+        modalContainer.innerHTML='';
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        //close button element 
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close')
+        closeButtonElement.innerText = 'close';
+
+
+        closeButtonElement.addEventListener('click', hideModal);
+
+        
+        // title element
+        let titleElement = document.createElement('h1');
+        titleElement.innerText= title;
+
+        //p element
+        let contentElement =document.createElement ('p');
+        contentElement.innerText = text;
+
+
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modalContainer.appendChild(modal);
+
+        modalContainer.classList.add('is-visible');
+    }
 
     // Load pokemon list and details, then render list items
     pokemonRepository.loadList().then(function() {
@@ -106,7 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             })
         })
+    
+      });
+    }
 
-      
-    });
 });
