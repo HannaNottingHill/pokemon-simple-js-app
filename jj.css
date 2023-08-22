@@ -1,0 +1,147 @@
+html,
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+.modal-body {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+
+.list-group-item {
+
+    background-color: skyblue;
+    color: white;
+    border: none;
+    ;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 6px 4px;
+    cursor: pointer;
+
+    text-transform: capitalize;
+    font-weight: bolder;
+
+
+}
+
+
+.pokemon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul {
+    list-style: none;
+    align-items: center;
+}
+
+
+
+#modal-container {
+    display: none;
+}
+
+#modal-container.is-visible {
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    text-transform: capitalize;
+
+    /* to show it above other content */
+    z-index: 999;
+
+    /* to allow scrolling if the screen is not high enough*/
+    overflow: auto;
+
+    /* this is used to center the modal */
+    display: grid;
+    text-align: center;
+}
+
+.modal {
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+
+
+}
+
+.modal-close {
+    float: right;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
+
+}
+
+.modal h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.modal p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+
+    .pokemon-button,
+    .list-group-item {
+        font-size: 19px;
+        padding: 8px 16px;
+
+        width: 250px;
+        height: 65px;
+    }
+
+    .modal {
+        max-width: 350px;
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+        align-items: center;
+    }
+}
+
+@media (min-width:769px) {
+
+    .pokemon-button,
+    .list-group-item {
+        font-size: 25px;
+        padding: 12px 24px;
+        width: 370px;
+        height: 85px;
+    }
+
+    .modal {
+        max-width: 550px;
+        max-height: 350px;
+    }
+
+    img {
+        height: 300px;
+        width: 300px;
+        align-items: center;
+    }
+}
