@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = []; //list to store fetched pokemon
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
   // addListItem function
   function addListItem(pokemon) {
