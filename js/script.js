@@ -82,6 +82,7 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
+    showDetails: showDetails,
 
     // reset search list
     resetList: function () {
@@ -139,13 +140,11 @@ function searchPokemon(keyword) {
     let button = document.createElement("button");
     button.classList.add("btn", "btn-primary");
     button.innerText = pokemon.name;
-
+    button.addEventListener("click", function (event) {
+      pokemonRepository.showDetails(pokemon);
+    });
     listPokemon.appendChild(button);
     pokemonListElement.appendChild(listPokemon);
-
-    button.addEventListener("click", function (event) {
-      showDetails(pokemon);
-    });
   });
 }
 
@@ -169,10 +168,3 @@ searchInput.addEventListener("input", function () {
     searchPokemon(keyword);
   }
 });
-
-//pokemonRepository.loadList().then(function () {
-//let allPokemon = pokemonRepository.getAll();
-
-// Promise.all(allPokemon.map(pokemonRepository.loadDetails)).then(function () {
-//allPokemon.forEach(function (pokemon) {
-//pokemonRepository.addListItem(pokemon);
