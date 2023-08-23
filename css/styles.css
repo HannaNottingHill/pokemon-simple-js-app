@@ -14,9 +14,12 @@
 }
 
 .btn {
-    width: 250px;
+    width: 350px;
 }
 
+.navbar {
+    margin-bottom: 15px;
+}
 
 #pokemon-list {
 
@@ -26,8 +29,12 @@
 }
 
 
-.navbar-brand {
+#title {
     font-size: 2rem;
+    font-weight: bold;
+    margin-left: 10px;
+    color: aliceblue;
+
 }
 
 
@@ -36,6 +43,14 @@
     text-align: center;
     margin-top: 12px;
     margin-bottom: 12px;
+}
+
+#search-btn {
+    width: 150px;
+    align-items: end;
+    color: aliceblue;
+    background-color: darkgray;
+    border-color: darkgray;
 }
 
 .modal-header {
