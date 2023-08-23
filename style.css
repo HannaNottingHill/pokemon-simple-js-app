@@ -1,5 +1,5 @@
 .btn-primary {
-    background-color: skyblue;
+    background-color: darkgray;
     color: white;
     border: none;
     ;
@@ -15,11 +15,12 @@
 
 
 
-.list-group {
+#pokemon-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
     align-items: center;
+    gap: 4px;
+
 
 }
 
@@ -38,4 +39,8 @@
 #pokemonImage {
     width: 250px;
     height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
